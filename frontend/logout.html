@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logout - PG</title>
+</head>
+<body>
+    <button type="submit" onclick="wohoo()">Logout</button>
+</body>
+<script>
+    async function wohoo() {
+        try {
+            const user = await fetch("http://localhost:5000/api/user/logout");
+            console.log("user loged out:", user);
+        } catch (error) {
+            console.error('An error occurred:', err);
+            
+        }
+
+
+    }
+</script>
+</html>

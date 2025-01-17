@@ -1,0 +1,1 @@
+bg-color: #ddeef8 (light-blur + light-white)

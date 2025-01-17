@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Playground Finder</title>
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/utils.css">
+</head>
+
+<body>
+    <header class="header-container">
+        <div class="logo-text"><a href="./index.html">Playground Finder</a></div>
+
+        <nav class="nav-container">
+            <a href="./index.html">Home</a>
+            <a href="./search.html">Playgrounds</a>
+            <a href="./about.html">About</a>
+            <a href="./contact.html">Contact</a>
+            <a href="./register.html">Register</a>
+            <a href="./login.html">Login</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Register</h1>
+        <form id="registerForm">
+            <label for="firstname" class="required">First Name</label>
+            <input autocomplete="off" type="text" id="firstname" name="fullname[firstname]"
+                placeholder="Enter your first name" required>
+            <div id="firstnameError" class="error-message"></div>
+
+            <label for="lastname">Last Name</label>
+            <input autocomplete="off" type="text" id="lastname" name="fullname[lastname]"
+                placeholder="Enter your last name">
+            <div id="lastnameError" class="error-message"></div>
+
+            <label for="mobilenumber">Mobile Number</label>
+            <input autocomplete="off" type="tel" id="mobilenumber" name="mobilenumber" maxlength="10"
+                pattern="[0-9]{10}" placeholder="Enter your mobile number">
+            <div id="mobilenumberError" class="error-message"></div>
+
+            <label for="email" class="required">Email</label>
+            <input autocomplete="off" type="email" id="email" name="email" placeholder="Enter your email" required>
+            <div id="emailError" class="error-message"></div>
+
+            <label for="password" class="required">Password</label>
+            <input autocomplete="off" type="password" id="password" name="password" placeholder="Enter your password"
+                required>
+            <div id="passwordError" class="error-message"></div>
+
+            <ul id="passwordChecklist" style="display: none;">
+                <li class="invalid">At least 8 characters</li>
+                <li class="invalid">Contains an uppercase letter</li>
+                <li class="invalid">Contains a number</li>
+                <li class="invalid">Contains a special character (@, $, !, %, *, ?, &)</li>
+            </ul>
+
+            <label for="repassword" class="required">Re-enter Password</label>
+            <input type="password" id="repassword" name="repassword" placeholder="Re-enter your password" required>
+            <div id="repasswordError" class="error-message"></div>
+
+            <ul id="repasswordChecklist" style="display: none;">
+                <li class="invalid">Passwords match</li>
+            </ul>
+
+            <label for="role">Role</label>
+            <select id="role" name="role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+            <div id="roleError" class="error-message"></div>
+
+            <div id="adminSecretField">
+                <label for="adminsecret" class="required">Admin Secret</label>
+                <input autocomplete="off" type="text" id="adminsecret" name="adminsecret"
+                    placeholder="Enter admin secret">
+                <div id="adminsecretError" class="error-message"></div>
+            </div>
+
+            <button type="submit" class="submit-button">Register</button>
+        </form>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-columns">
+            <div class="footer-column logo-footer">
+                <h3>Playground Finder</h3>
+                <p>Playground Finder is your trusted source for locating playgrounds, outdoor spaces, and
+                    family-friendly recreational spots. We are committed to protecting your privacy and ensuring the
+                    best user experience.</p>
+                <p>Discover and enjoy the best playgrounds in your area.</p>
+            </div>
+
+            <div class="footer-sub-column ">
+                <div class="footer-column sub-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="./search.html">Find Playgrounds</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column sub-column">
+                    <h3>Get in touch</h3>
+                    <p>mado@ojje.kh</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="footer-copyright">&copy; 2025 Playground Finder. All rights reserved.</p>
+    </footer>
+
+    <script src="./js/register.js"></script>
+</body>
+
+</html>

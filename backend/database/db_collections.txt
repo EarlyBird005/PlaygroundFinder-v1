@@ -1,0 +1,71 @@
+Users {
+  _id string pk
+  firstname string
+  lastname string
+  mobileNumber string unique
+  email string unique
+  password string
+  createdAt timestamp
+}
+
+Playegrounds  {
+  _id string pk
+  name string
+  address string
+  zipcode string
+  city string
+  reviews[] objectId Reviews
+  description string
+  openingHour string
+  averageRating number
+  createdAt timestamp
+}
+
+Facilities {
+  _id string pk
+  PlayegroundId objectId Playegrounds
+  name string
+  createdAt timestamp
+}
+
+Images {
+  _id string pk
+  playegroundId objectId Playegrounds
+  imageUrl string
+//  alterText string
+  createdAt timestamp
+}
+
+Reviews {
+  _id string pk
+  userId objectId Users
+  playegroundId objectId Playegrounds
+  rating number
+  comment string
+  createdAt timestamp
+}
+
+// Bookings {
+//   _id string pk
+//   playegroundId objectId Playegrounds
+//   userId objectId Users
+//   bookingDate string
+//   bookingTime string
+//   status enum "confirmed", "cancelled", "pending"
+//   createdAt timestamp
+// }
+
+PlaygorundMaintenance {
+  _id string pk
+  playegroundId objectId Playegrounds
+  issue string
+  status enu "none", "pending", "in progress", "resolved"
+  resolvedAt timestamp
+}
+
+Users._id < Reviews.userId
+Users._id < Bookings.userId
+Playegrounds._id < Reviews.playegroundId
+Playegrounds._id < Facilities._id
+Playegrounds._id < Photos._id
+Playegrounds._id - PlaygorundMaintenance._id

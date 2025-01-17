@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground Details</title>
+    <link rel="stylesheet" href="./css/playground-detail.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/utils.css">
+</head>
+
+<body>
+    <header class="header-container">
+        <div class="logo-text"><a href="./index.html">Playground Finder</a></div>
+
+        <nav class="nav-container">
+            <a href="./index.html">Home</a>
+            <a href="./search.html">Playgrounds</a>
+            <a href="./about.html">About</a>
+            <a href="./contact.html">Contact</a>
+            <a href="./register.html">Register</a>
+            <a href="./login.html">Login</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <header>
+            <h1 id="playground-name">Loading...</h1>
+            <p id="playground-address" class="address">Loading...</p>
+        </header>
+
+        <main class="grid">
+            <section class="main-content">
+                <div class="image-container">
+                    <img id="playground-image" src="/placeholder.svg" alt="Playground Image">
+                </div>
+
+                <p id="playground-description" class="description">Loading...</p>
+
+                <div id="tags" class="tags">
+                    <!-- Tags will be added dynamically -->
+                </div>
+                <!-- example
+                    <div class="tags">
+                    <span class="badge">Age group: 3-12 years</span>
+                    <span class="badge">Accessible</span>
+                    <span class="badge">Nature-inspired</span>
+                    <span class="badge">Shaded areas</span>
+                    </div>
+                -->
+
+                <div class="features">
+                    <h2>Features</h2>
+                    <ul id="features-list">
+                        <!-- Features will be added dynamically -->
+                    </ul>
+                    <!-- example
+                    <ul>
+                        <li>Treehouse-style climbing structure</li>
+                        <li>Natural log balance beams</li>
+                        <li>Rope bridges and swings</li>
+                        <li>Water play feature (seasonal)</li>
+                        <li>Picnic area with tables</li>
+                    </ul>
+                </div> -->
+
+                <div class="buttons">
+                    <button>Get Directions</button>
+                    <button>Share</button>
+                </div>
+            </section>
+
+            <aside class="sidebar">
+                <div class="card">
+                    <h3>Location & Hours</h3>
+                    <p id="sidebar-address">Loading...</p>
+                    <p id="sidebar-hours">Loading...</p>
+                </div>
+
+                <div class="card">
+                    <h3>Nearby Amenities</h3>
+                    <ul>
+                        <li>Public restrooms</li>
+                        <li>Parking lot (free)</li>
+                        <li>Cafe (100m)</li>
+                        <li>Wheelchair accessible</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- user need to login to leave a review
+            <section class="reviews-section">
+                <h2>Reviews</h2>
+                <div id="reviews-container">
+                    Reviews will be dynamically added here
+                </div>
+        
+                <form id="review-form">
+                    <h3>Leave a Review</h3>
+                    <div class="form-group">
+                        <label for="review-name">Your Name:</label>
+                        <input type="text" id="review-name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="review-text">Your Review:</label>
+                        <textarea id="review-text" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="review-rating">Rating:</label>
+                        <select id="review-rating" required>
+                            <option value="5">5 - Excellent</option>
+                            <option value="4">4 - Good</option>
+                            <option value="3">3 - Average</option>
+                            <option value="2">2 - Poor</option>
+                            <option value="1">1 - Terrible</option>
+                        </select>
+                    </div>
+                    <button type="submit">Submit Review</button>
+                </form>
+            </section> -->
+        </main>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-columns">
+            <div class="footer-column logo-footer">
+                <h3>Playground Finder</h3>
+                <p>Playground Finder is your trusted source for locating playgrounds, outdoor spaces, and
+                    family-friendly recreational spots. We are committed to protecting your privacy and ensuring the
+                    best user experience.</p>
+                <p>Discover and enjoy the best playgrounds in your area.</p>
+            </div>
+
+            <div class="footer-sub-column ">
+                <div class="footer-column sub-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="./search.html">Find Playgrounds</a></li>
+                        <li><a href="./about.html">About</a></li>
+                        <li><a href="./contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column sub-column">
+                    <h3>Get in touch</h3>
+                    <p>mado@ojje.kh</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="footer-copyright">&copy; 2025 Playground Finder. All rights reserved.</p>
+    </footer>
+
+    <script src="./js/playground-detail.js"></script>
+</body>
+
+</html>

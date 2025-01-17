@@ -1,0 +1,89 @@
+.container {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 20px;
+    background-color: #a5a1a1;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.required::after {
+    content: ' *';
+    color: red;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: #1f1f1f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 3px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #424242;
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: -15px;
+    margin-bottom: 10px;
+}
+
+#adminSecretField {
+    display: none;
+}
+
+#passwordChecklist,
+#repasswordChecklist {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+#passwordChecklist li,
+#repasswordChecklist li {
+    font-size: 14px;
+    color: red;
+}
+
+.valid {
+    color: green;
+}

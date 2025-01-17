@@ -1,0 +1,37 @@
+{
+  "name": "playground-finder",
+  "version": "1.0.0",
+  "description": "Website which helps you find playgrounds",
+  "main": "backend/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon backend/server.js",
+    "frontend": "live-server --port=5500 --open=./frontend/index.html",
+    "start": "concurrently \"npm run dev\" \"npm run frontend\""
+  },
+  "keywords": [
+    "playground",
+    "park",
+    "sports",
+    "games",
+    "outdoor-sports",
+    "playground-finder"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "live-server": "^1.2.2",
+    "nodemon": "^3.1.9"
+  }
+}
