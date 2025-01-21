@@ -18,26 +18,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Prepare the data to send to the server
         const loginData = { email, password };
-        console.log("login:", loginData);
-
+        console.log("login credentials:", loginData);
         try {
             // Send a POST request to the login API
-            const response = await fetch('http://localhost:5000/api/user/login', {
+            const response = await fetch('http://127.0.0.1:5000/api/user/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(loginData),
                 credentials: 'include'
             });
-
+            // console.log("response.ok:", response);
             if (response.ok) {
                 const result = await response.json(); // Parse the JSON response
-
+                alert(`Result: ${JSON.stringify(result)}`);
                 // Redirect to the home page
-                window.location.href = './index.html';
+                //window.location.href = './index.html';
+                setTimeout(() => {
+                    window.location.href = './index.html';
+                }, 500);
             } else {
                 // Handle server errors (e.g., invalid credentials)
                 const error = await response.json();
-                // errorMessage.textContent = error.message || 'Login failed. Please try again.';
+                errorMessage.textContent = error.msg || error.message || 'Login failed. Please try again.';
             }
         } catch (err) {
             // Handle network or unexpected errors

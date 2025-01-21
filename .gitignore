@@ -4,3 +4,4 @@ frontend/testing/
 backend/playgroundsDetail.json
 backend/testing.js
 backend/utils/PGDetailInsert.js
+public/img

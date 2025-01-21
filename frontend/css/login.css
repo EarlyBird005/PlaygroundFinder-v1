@@ -1,5 +1,9 @@
 main {
-    height: calc(100vh - 64px - 290px);
+    
+    height: min-content;
+    @media (min-width: calc(100vh - 64px - 290px)) {
+        height: calc(100vh - 64px - 290px);
+    }
 }
 
 .container {

@@ -1,6 +1,7 @@
 /* Footer Section */
 .footer-section {
     background-color: #2f2f2f;
+    opacity: 0.65;
     padding: 40px 40px 20px;
     /* margin-top: 40px; */
 }

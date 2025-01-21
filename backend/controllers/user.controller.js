@@ -2,6 +2,7 @@ import { UserModel } from "../models/User.model.js"
 
 export const userRegister = async (req, res) => {
     const { fullname, email, password } = req.body;
+    console.log("req.body:", req.body);
     if (!fullname?.firstname || !email || !password) {
         return res.status(400).json({
             msg: "All fileds are required",
@@ -49,6 +50,7 @@ export const userLogin = async (req, res) => {
     }
 
     const { email, password } = req.body;
+    console.log("data:", JSON.stringify(req.body));
     if (!email || !password) {
         return res.status(400).json({
             msg: "All fields are required",
@@ -64,19 +66,22 @@ export const userLogin = async (req, res) => {
         });
     }
 
-    const passMatched = await user.comparePassword(password);
+    const passMatched = await user.passCheck(password);
+    // user.comp
+    console.log("passMatched:", passMatched);
     if (!passMatched) {
         return res.status(400).json({
-            message: "Password is incorrect",
+            msg: "Password is incorrect",
             success: "fail"
         });
     }
 
     const token = user.generateAuthToken();
+    console.log("token ", token);
     res.cookie("token", token, {
         httpOnly: true,
-        sameSite: 'None',
-        domain: 'http:localhost:5000'
+        secure: false, // Set to true for HTTPS
+        maxAge: 60 * 60 * 1000 // 1h
     });
     /* 
     header cookie set: 
@@ -84,7 +89,7 @@ export const userLogin = async (req, res) => {
     */
 
     return res.status(200).json({
-        message: "Login successfully",
+        msg: "Login successfully",
         token
     });
 }
@@ -94,14 +99,14 @@ export const userLogout = (req, res) => {
     const cookie = req.cookies.token;
     if (!cookie) {
         return res.status(401).json({
-            message: "Cookie not found",
+            msg: "Cookie not found",
             success: "fail"
         });
     }
 
     res.clearCookie("token");
     return res.status(200).json({
-        message: "Logged out successfully",
+        msg: "Logged out successfully",
         success: "true"
     });
 }
@@ -137,11 +142,11 @@ export const updateUserData = async (req, res) => {
             updatedUser
         });
     } catch (error) {
-        // return res.status(400).json({
-        //     msg: "An error occurred while updating data",
-        //     error: error.message
-        // });
-        console.log("An error occurred while updating data:", error);
+        console.log("An error occurred while updating user data:", error);
+        return res.status(400).json({
+            msg: "An error occurred while user updating data",
+            error: error.message
+        });
     }
 }
 

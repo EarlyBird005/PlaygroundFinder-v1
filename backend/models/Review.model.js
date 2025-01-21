@@ -5,7 +5,8 @@ const ReviewSchema = new mongoose.Schema({
         type: Number
     },
     comment: {
-        type: String
+        type: String,
+        default: ""
     },
     userId: {
         type: mongoose.Schema.Types.ObjectId,

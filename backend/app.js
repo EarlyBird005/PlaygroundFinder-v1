@@ -1,16 +1,33 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 export const app = express();
 
+const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:5500'];
 app.use(cors({
-    origin: true
+    origin: (origin, callback) => {
+        if (allowedOrigins.includes(origin) || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true
 }));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json()); // Parse JSON data
-app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded data
+// app.use(cors());
+// app.use(cors({
+//     origin: "*",
+//     credentials: true
+// }));
+// app.options('*', cors({
+//     origin: 'http://127.0.0.1:5500',
+//     credentials: true
+// }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// app.use(bodyParser.json()); // Parse JSON data
+// app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded data
 app.use(cookieParser());
 
 // middleware imports
@@ -32,7 +49,7 @@ app.use("/api/playground", playgroundRoute);
 
 app.use((err, req, res, next) => {
     // console.log("error middleware:", err);
-    res.status(err.status || 500).json({ message: err.message, status: err.status || 500 });
+    return res.status(err.status || 500).json({ message: err.message, status: err.status || 500 });
 });
 
 
